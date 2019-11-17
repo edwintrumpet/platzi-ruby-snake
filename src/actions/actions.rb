@@ -7,9 +7,6 @@ module Actions
         else
             end_game(state)
         end
-        # verificar que la siguiente casilla sea válida
-        # si no es válida terminamos el juego
-        # si es válida movemos la serpiente
     end
 
     private
@@ -35,8 +32,8 @@ module Actions
         return !(state.snake.positions.include? position)
     end
 
-    def self.move_snake_to(snake, position)
-        new_positions = [next_position] + state.snake.positions[0...-1]
+    def self.move_snake_to(state, position)
+        new_positions = [position] + state.snake.positions[0...-1]
         state.snake.positions = new_positions
         state
     end
