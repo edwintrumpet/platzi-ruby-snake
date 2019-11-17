@@ -28,7 +28,7 @@ module Model
                 Model::Coord.new(0,1),
             ]),
             Model::Food.new(4,4),
-            Model::Grid.new(8, 12),
+            Model::Grid.new(80, 120),
             Model::Direction::DOWN,
             false
         )

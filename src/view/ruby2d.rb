@@ -4,7 +4,7 @@ require_relative "../model/state"
 module View
     class Ruby2dView
         def initialize(app)
-            @pixel_size = 50
+            @pixel_size = 6
             @app = app
         end
 
@@ -22,6 +22,8 @@ module View
         end
 
         def render(state)
+            extend Ruby2D::DSL
+            close if state.game_finished
             render_food(state)
             render_snake(state)
         end
